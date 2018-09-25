@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<input id="content" type="text">
+
+<table rules="all">
+    <caption>
+        <span id="lastYear">&lt;</span>
+        <select id="selectYear"></select>
+        <span id="nextYear">&gt;</span>
+        <span id="time"></span>
+        <span id="lastMonth">&lt;</span>
+        <select id="selectMon"></select>
+        <span id="nextMonth">&gt;</span>
+    </caption>
+    <thead>
+    <tr>
+        <th>Sun</th>
+        <th>Mon</th>
+        <th>Tue</th>
+        <th>Wed</th>
+        <th>Thu</th>
+        <th>Fri</th>
+        <th>Sat</th>
+    </tr>
+    </thead>
+    <tbody id="tBody">
+    </tbody>
+</table>
+<script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="calendar.js"></script>
+</body>
+</html>

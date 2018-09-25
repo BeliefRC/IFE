@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>图片灯箱插件</title>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+
+    <link rel="stylesheet" type="text/css" href="http://www.imooc.com/data/jquery.notesforlightbox.css"/>
+    <link href="style.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="http://www.imooc.com/data/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="http://www.imooc.com/data/jquery.notesforlightbox.js"></script>
+    <style>
+        #divtest {
+            width: 282px;
+        }
+
+        #divtest .title {
+            padding: 8px;
+            background-color: Blue;
+            color: #fff;
+            height: 23px;
+            line-height: 23px;
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        #divtest .content {
+            padding: 8px 0px;
+            background-color: #fff;
+            font-size: 13px;
+        }
+
+        #divtest .content .divPics ul {
+            list-style: none;
+            padding: 0px;
+            margin: 0px;
+        }
+
+        #divtest .content .divPics ul li {
+            display: inline;
+        }
+
+        #divtest .content .divPics ul img {
+            border: 5px solid #444;
+            border-width: 5px;
+            width: 75px;
+            height: 75px;
+        }
+
+        #divtest .content .divPics ul a:hover img {
+            border: 5px solid #fff;
+            border-width: 5px;
+            color: #fff;
+        }
+
+        #divtest .content .divPics ul a:hover {
+            color: #fff;
+        }
+
+        .fl {
+            float: left;
+        }
+
+        .fr {
+            float: right;
+        }
+    </style>
+</head>
+
+<body>
+<div id="divtest">
+    <div class="title">
+        <span class="fl">我的相册</span>
+    </div>
+    <div class="content">
+        <div class="divPics">
+            <ul>
+                <li><a href="http://img.mukewang.com/52e489f20001ecfc04480275.jpg" title="第1篇风景图片">
+                    <img src="http://img.mukewang.com/52e489f20001ecfc04480275.jpg" alt=""/>
+                </a></li>
+                <li><a href="http://img.mukewang.com/52e48a1e0001eec804480275.jpg" title="第2篇风景图片">
+                    <img src="http://img.mukewang.com/52e48a1e0001eec804480275.jpg" alt=""/>
+                </a></li>
+                <li><a href="http://img.mukewang.com/52e48a4c00015ad204480275.jpg" title="第3篇风景图片">
+                    <img src="http://img.mukewang.com/52e48a4c00015ad204480275.jpg" alt=""/>
+                </a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        $(".divPics a").lightBox({
+            overlayBgColor: "#669", //图片浏览时的背景色
+            overlayOpacity: 0.1, //背景色的透明度
+            containerResizeSpeed: 60 //图片切换时的速度
+        })
+    });
+</script>
+</body>
+</html>

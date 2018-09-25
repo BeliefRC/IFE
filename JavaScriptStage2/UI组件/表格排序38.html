@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        table {
+            margin: 30px auto;
+            font-size: 20px;
+            border: solid 1px black;
+            text-align: center;
+            width: 600px;
+        }
+
+        table tr {
+            height: 40px;
+        }
+
+        table tr td {
+            width: 120px;
+        }
+
+        #top {
+            /*top: 0px;*/
+            /*position: fixed;*/
+            border-top: solid 1px black;
+            background-color: black;
+            color: white;
+            height: 40px;
+        }
+
+        #top td {
+            position: relative;
+            height: 40px;
+            width: 120px;
+        }
+
+        #top td:not(last-child) {
+            border-right: solid 1px white;
+        }
+
+        .minMax {
+            position: absolute;
+            right: 5px;
+            top: 7px;
+            width: 0;
+            height: 0;
+            border-top: none;
+            border-right: 8px solid transparent;
+            border-left: 8px solid transparent;
+            border-bottom: 10px solid white;
+            cursor: pointer;
+        }
+
+        .maxMin {
+            position: absolute;
+            right: 5px;
+            top: 24px;
+            width: 0;
+            height: 0;
+            border-top: 10px solid white;
+            border-right: 8px solid transparent;
+            border-left: 8px solid transparent;
+            border-bottom: none;
+            cursor: pointer;
+
+        }
+
+        .maxMin:hover {
+            border-top: 13px solid red;
+            border-right: 8px solid transparent;
+            border-left: 8px solid transparent;
+            border-bottom: none;
+        }
+
+        .minMax:hover {
+            border-top: none;
+            border-right: 8px solid transparent;
+            border-left: 8px solid transparent;
+            border-bottom: 13px solid red;
+        }
+
+
+    </style>
+</head>
+<body>
+<table rules="all">
+    <tbody id="score">
+    <tr id="top">
+        <td style="border-left: solid 1px black">姓名</td>
+        <td>语文
+            <div class="minMax"></div>
+            <div class="maxMin"></div>
+        </td>
+        <td>数学
+            <div class="minMax"></div>
+            <div class="maxMin"></div>
+        </td>
+        <td>英语
+            <div class="minMax"></div>
+            <div class="maxMin"></div>
+        </td>
+        <td style="border-right: solid 1px black">总分
+            <div class="minMax"></div>
+            <div class="maxMin"></div>
+        </td>
+    </tr>
+
+    </tbody>
+</table>
+<h1>标记</h1>
+<h1>标记</h1>
+<h1>标记</h1>
+<h1>标记</h1>
+<h1>标记</h1>
+<h1>标记</h1>
+<h1>标记</h1>
+<h1>标记</h1>
+<h1>标记</h1>
+<h1>标记</h1>
+<h1>标记</h1>
+<h1>标记</h1>
+<h1>标记</h1>
+<h1>标记</h1>
+<h1>标记</h1>
+<h1>标记</h1>
+<h1>标记</h1>
+<h1>标记</h1>
+<h1>标记</h1>
+<h1>标记</h1>
+<h1>标记</h1>
+<h1>标记</h1>
+<h1>标记</h1>
+<h1>标记</h1>
+<h1>标记</h1>
+<h1>标记</h1>
+<script>
+    window.onload = function () {
+        var data = [
+            ['小明', 80, 90, 70, 240],
+            ['小红', 90, 60, 90, 240],
+            ['小亮', 60, 100, 70, 230],
+            ['小强', 100, 70, 80, 250],
+            ['小明', 80, 90, 70, 240],
+            ['小红', 90, 60, 90, 240],
+            ['小亮', 60, 100, 70, 230],
+            ['小强', 100, 70, 80, 250],
+            ['小明', 80, 90, 70, 240],
+            ['小红', 90, 60, 90, 240],
+            ['小亮', 60, 100, 70, 230],
+            ['小强', 100, 70, 80, 250],
+            ['小明', 80, 90, 70, 240],
+            ['小红', 90, 60, 90, 240],
+            ['小亮', 60, 100, 70, 230],
+            ['小强', 100, 70, 80, 250],
+            ['小明', 80, 90, 70, 240],
+            ['小红', 90, 60, 90, 240],
+            ['小亮', 60, 100, 70, 230],
+            ['小强', 100, 70, 80, 250],
+            ['小明', 80, 90, 70, 240],
+            ['小红', 90, 60, 90, 240],
+            ['小亮', 60, 100, 70, 230],
+            ['小强', 100, 70, 80, 250]
+        ];
+        //****************************************排序*****************************************************************
+
+
+        var score = document.getElementById("score");
+
+        //渲染表格
+        function render() {
+            for (var i = 0; i < data.length; i++) {
+                var tr = document.createElement("tr");
+                for (var j = 0; j < data[i].length; j++) {
+                    var td = document.createElement("td");
+                    td.innerHTML = data[i][j];
+                    tr.appendChild(td);
+                }
+                score.appendChild(tr);
+            }
+        }
+
+        //正序
+        render();
+        function correct_order(i) {
+            data.sort(function (a, b) {
+                return a[i] - b[i];
+            })
+        }
+
+
+        //倒序
+        function inverted_order(i) {
+            data.sort(function (a, b) {
+                return b[i] - a[i];
+            })
+        }
+
+        var minMaxList = document.getElementsByClassName("minMax");
+//        立即执行函数，绑定正序函数
+        (function () {
+            for (var i = 0; i < minMaxList.length; i++) {
+//                将i的值保存到n中 可以即时访问i的值
+                (function (n) {
+                    minMaxList[i].addEventListener('click', function () {
+                        correct_order(n + 1);
+
+                        //删除原有表格数据
+                        for (var j = 1, l = score.rows.length; j < l; j++) {
+                            score.removeChild(score.rows[1]);
+                        }
+
+                        render();
+                    });
+                })(i);
+
+            }
+        })();
+
+
+        var maxMinList = document.getElementsByClassName("maxMin");
+//        立即执行函数，绑定倒序函数
+        (function () {
+
+            for (var i = 0; i < maxMinList.length; i++) {
+                (function (n) {
+                    maxMinList[i].addEventListener('click', function () {
+                        inverted_order(n + 1);
+                        //删除原有表格数据
+
+                        for (var j = 1, l = score.rows.length; j < l; j++) {
+                            score.removeChild(score.rows[1]);
+                        }
+
+                        render();
+                    });
+
+                })(i);
+
+            }
+
+        })();
+
+        //****************************************冻结***************************************************************
+        var top = document.getElementById("top");
+        console.log(score.offsetHeight + "px");
+        console.log(top.offsetHeight + "px");
+
+
+        window.onscroll = function () {
+            var distance = document.getElementsByTagName("table")[0].offsetTop - window.scrollY;
+            if (distance <= 0 && distance >=-score.offsetHeight) {
+                top.style.position = "fixed";
+                top.style.top = "0";
+            }
+            else {
+                top.removeAttribute("style");
+            }
+        }
+
+
+    }
+</script>
+</body>
+</html>

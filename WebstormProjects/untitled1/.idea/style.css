@@ -1,0 +1,132 @@
+body{
+    background: grey;
+    margin: 0px;
+}
+
+
+#top{
+    background: black;
+    height:60px;
+    width: 100%;
+    line-height:60px;
+}
+#logo{
+    height: 60px;
+    width: 120px;
+    padding-left: 20px;
+}
+#top a{
+    color: white;
+    float: right;
+    text-decoration : none;
+    padding-right: 5px;
+}
+#plate1,#plate2,#plate3,#plate4,#plate5{
+    width:70%;
+    background: white;
+    margin:20px auto;
+    margin-left: 20px;
+    padding-bottom: 1em;
+    padding-left: 1em;
+    padding-top: 1em;
+    position: relative;
+    overflow:auto;
+}
+#plate5{
+    float: right;
+    width: 25%;
+    right: 20px;
+    position: absolute;
+    top: 60px;
+    text-align: left;
+
+}
+#inpicture{
+    height: 240px;
+    width: 300px;
+}
+span{
+    color: grey;
+}
+blockquote{
+    text-indent: 2em;
+    line-height: 2em;
+    font-family: "Microsoft YaHei UI Light";
+    margin-left: 0px;
+}
+li{
+    margin: 3px;
+}
+.beautiful1,.beautiful2,.beautiful3,.beautiful4,.beautiful5,.beautiful6,.beautiful7,.beautiful8,.beautiful9,.beautiful10{
+    margin: 15px;
+    margin-left: 25px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: black;
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    font-size: 10px;
+    padding-bottom: 5px;
+    float: left;
+
+
+}
+.beautiful1 img,.beautiful2 img,.beautiful3 img,.beautiful4 img,.beautiful5 img,.beautiful6 img,.beautiful7 img,.beautiful8 img,.beautiful9 img,.beautiful10 img{
+    width: 150px;
+    height: 150px;
+    padding-top: 15px;
+}
+
+
+#plate4 p{
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 30px;
+}
+table {
+    border: 1px solid;
+    color: black;
+    width: 96%;
+    height: 200px;
+}
+th{
+    text-align: left;
+    color: white;
+    background: black;
+}
+.one{
+
+    display:block;
+    margin-left: 35%;
+
+}
+input{
+    margin-bottom: 12px;
+}
+
+#submitButton{
+    display: inline;
+color: white;
+    background: blue;
+    width: 96%;
+    height: 40px;
+    line-height: 40px;
+    border-radius:10px;
+    font-size: 1em;
+    font-weight: bold;
+    margin-left: 0;
+
+
+
+}
+#end{
+    text-align: center;
+    color: white;
+    background: black;
+    height: 60px;
+    line-height: 60px;
+}
+h3{
+    text-align: center;
+}

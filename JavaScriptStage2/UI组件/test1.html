@@ -1,0 +1,86 @@
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+<html>
+
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+    <script src="http://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js"></script>
+    <style type="text/css">
+        p {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+<div>
+    <p>P元素1，默认给绑定一个点击事件</p>
+    <p>P元素2，默认给绑定一个点击事件</p>
+</div>
+<button id="bt1">点击删除 p 元素</button>
+<button id="bt2">点击移动 p 元素</button>
+<script type="text/javascript">
+    $('p').click(function (e) {
+        alert(e.target.innerHTML)
+    })
+    var p;
+    $("#bt1").click(function () {
+        if (!$("p").length) return; //去重
+        //通过detach方法删除元素
+        //只是页面不可见，但是这个节点还是保存在内存中
+        //数据与事件都不会丢失
+        p = $("p");
+        console.log(p == $("p"));
+        $("p").parent().html("");
+    });
+
+    $("#bt2").click(function () {
+        //把p元素在添加到页面中
+        //事件还是存在
+        $("div").append(p);
+    });
+//    console.log(p == $("p"));
+</script>
+</body>
+
+</html>

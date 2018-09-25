@@ -1,0 +1,76 @@
+/**
+* Author:Who am I ?
+* Time:2016-04-26
+* Issues:1.
+*/
+@charset "UTF-8";
+* {
+    padding: 0;
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+body {
+
+}
+
+#tab {
+    border-collapse: collapse;
+    width: 500px;
+    margin: 150px auto;
+    color: #666;
+    text-align: center;
+    border: 2px solid #333;
+    border-top: none;
+}
+
+#tab caption {
+    padding: 5px 0;
+    background: #f00;
+    color: #fff;
+    border: 2px solid #666;
+    border-bottom: none;
+    position: relative;
+}
+
+/* :not() 反选 伪类选择器 */
+#tab span:not([id="title"]) {
+    color: #0f2;
+    cursor: pointer;
+    position: absolute;
+    font-weight: bolder;
+}
+
+#tab span:not([id="title"]):hover {
+    color: #f00;
+    background: #fff;
+}
+
+#tab span:first-of-type {
+    left: 20px;
+}
+
+#tab span:nth-of-type(2) {
+    left: 50px;
+}
+
+#tab span:nth-of-type(4) {
+    right: 50px;
+}
+
+#tab span:last-of-type {
+    right: 20px;
+}
+
+#tab tr td:first-child,
+#tab tr td:last-child,
+#tab tr th:first-child,
+#tab tr th:last-child {
+    color: #f00; /* 高亮星期六、日 */
+}
+
+#tab tr td:hover {
+    background: #f02;
+    color: #fff;
+    cursor: pointer;
+}

@@ -1,0 +1,70 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    /*box-sizing: border-box;*/
+}
+#content{
+    margin-top: 50px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    border: solid 1px black;
+}
+table {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 100px;
+    display: inline-block;
+    width: 350px;
+    /*height: 350px;*/
+    border: solid 1px gray;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    text-align: center;
+    vertical-align: inherit;
+}
+
+caption {
+    line-height: 30px;
+    height: 30px;
+    width: 350px;
+}
+
+table thead {
+    margin-top: 5px;
+    color: darkblue;
+}
+
+table thead tr th {
+    width: 50px;
+}
+
+table thead tr th:first-child, table tbody tr th:first-child {
+    border-left: none;
+}
+
+table thead tr th:last-child, table tbody tr th:last-child {
+    border-right: none;
+}
+
+span{
+    cursor: pointer;
+}
+#nextYear{
+    margin-right: 20px;
+}
+#lastMonth{
+    margin-left: 20px;
+}
+
+table tr td {
+    /*background-color: #bbffaa;*/
+    border: solid 1px gray;
+    width: 49px;
+    height: 40px;
+}
+table tr td:hover{
+    background-color: #555555;
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+<title></title>
+</head>
+<body>
+<p>从Files选择的多个文件中删除某个</p>
+<hr>
+
+ <input type="file"multiple id="file">
+ <ul id="fileList"></ul>
+ <input type="button"value="Clear"id="clearBtn">
+
+<script>
+ var oFile = document.getElementById('file');
+ var oList = document.getElementById('fileList');
+ var fileList;
+ oFile.onchange = function(e){
+if(this.files.length>2){
+alert('最多选择两个文件！');
+ this.value = '';
+}else{
+ fileList = Array.prototype.slice.call(this.files);
+ for(var i=0;i<this.files.length;i++){
+ var node = document.createElement('li');
+node.setAttribute('id','li_'+i);
+ var html = this.files[i].name+"<button title='btn_"+i+"' class='delBtn'>del</button>";
+ node.innerHTML = html;
+oList.appendChild(node);
+}
+}
+};
+
+ oList.addEventListener('click', function(e){
+ var $el = e.target;
+ if($el.className == 'delBtn'){
+ var $li = $el.parentNode;
+$li.parentNode.removeChild($li);
+ var index = parseInt( $el.getAttribute('title').replace('btn_', '') );
+ fileList.splice(index, 1);
+};
+ }, false);
+
+ // 提交文件时
+ fileList.forEach(function (file) {
+ if (file.name.matches(/something.txt/)) { // 这里可以过虑掉不是你需要的格式的文件
+ var reader = new FileReader();
+ // 开始监听
+ reader.onload = (function (processedFile) {
+ return function (e) {
+ var fileData = { name : processedFile.name, fileData : e.target.result };
+
+ // 提交到你的服务器上
+ $.post("/your/url/here", fileData); // 这句是用jQuery的语法写的，真实的得自己去实现
+
+ // or add to list to submit as group later
+validatedFiles.push(fileData);
+};
+})(file);
+
+ // 开始将文件加载到内存中
+reader.readAsDataURL(file);
+ } else {
+ 
+}
+});
+</script>
+</body>
+</html>

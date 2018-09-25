@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <style>
+        body {
+            font: 14px/1.5 '\5fae\8f6f\96c5\9ed1', Arial, Tahoma, sans-serif;
+        }
+
+        ul > li {
+            margin-left: 20px;
+        }
+
+        h2 {
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+<h2>表格插件&默认配置参数说明</h2>
+<ul><span style="font-size: 18px;">本插件可配选项:</span>
+    <li>表格数据</li>
+    <li>插入位置 (注意一个容器中不要插入两个表格会引起BUG)</li>
+    <li>总体排序开关</li>
+    <li>单列排序开关</li>
+    <li>表头冻结</li>
+    <li>表头背景色</li>
+</ul>
+<span style="font-size: 18px;">默认参数&调用:</span>
+<p>
+    var table1 = TableTool.init({ <br>
+    &nbsp&nbsp&nbsp&nbspappend:$('.body'), <br>
+    &nbsp&nbsp&nbsp&nbspdata:{ <br>
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspthead:[], <br>
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspsortSwitch:[], <br>
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsptbody:{}<br>
+    &nbsp&nbsp&nbsp&nbsp}<br>
+    &nbsp&nbsp&nbsp&nbspisSort:true,<br>
+    &nbsp&nbsp&nbsp&nbspisFrozen:true,<br>
+    &nbsp&nbsp&nbsp&nbspheadColor:'defaultColor<br>
+    }),
+</p>
+<h2>一、默认参数插件示例</h2>
+<div class="table1"></div>
+<div style="height:200px;"></div>
+<h2>二、总体排序开关示例</h2>
+<div class="table2"></div>
+<div style="height:200px;"></div>
+<h2>三、单列排序开关示例</h2>
+<div class="table3"></div>
+<div style="height:200px;"></div>
+<h2>四、冻结首行开关示例</h2>
+<div class="table4"></div>
+<div style="height:200px;"></div>
+<h2>五、标头背景色更换示例</h2>
+<div class="table5"></div>
+<div style="height:1000px;"></div>
+
+<script src="task38.js"></script>
+</body>
+</html>
+	

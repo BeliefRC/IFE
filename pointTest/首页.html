@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0px;
+            border: 0;
+            padding: 0;
+        }
+        header{
+            width: 90%;
+            height: 60px;
+            margin: 0 auto;
+            background-color:aqua;
+            font-size: 0;
+        }
+        nav{
+            height: 60px;
+            width: 30%;
+            display: inline-block;
+            vertical-align: middle;
+            font-size: 14px;
+            position: relative;
+            float: right;
+            display: inline-block;
+            line-height: 60px;
+        }
+        li{
+            float: left;
+            width: 20%;
+            list-style: none;
+            text-align: center;
+            cursor: pointer;
+            -webkit-transition: all 0.4s ease-in-out;
+            -moz-transition:all 0.4s ease-in-out;
+            transition:all 0.4s ease-in-out;
+        }
+        .move{
+            width: 20%;
+            height: 4px;
+            background-color: red;
+            top: 56px;
+            left: 0;
+            position: absolute;
+            -webkit-transition: all 0.4s ease-in-out;
+            -moz-transition: all 0.4s ease-in-out;
+            transition: all 0.4s ease-in-out;
+        }
+
+        header nav ul li:hover{
+            color: #F04C57;
+        }
+        header nav ul li:nth-child(1):hover~.move{
+            left: 0;
+        }
+        header nav ul li:nth-child(2):hover~.move{
+            left: 20%;
+        }
+        header nav ul li:nth-child(3):hover~.move{
+            left: 40%;
+        }
+        header nav ul li:nth-child(4):hover~.move{
+            left: 60%;
+        }
+        header nav ul li:nth-child(5):hover~.move{
+            left: 80%;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <nav>
+        <ul>
+            <li>首页</li>
+            <li>最新活动</li>
+            <li>项目介绍</li>
+            <li>爱心社区</li>
+            <li>关于我们</li>
+            <li class="move"></li>
+        </ul>
+    </nav>
+</header>
+</body>
+</html>

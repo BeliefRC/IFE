@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        input[type="text"] {
+            margin-left: 10px;
+        }
+
+        button {
+            cursor: pointer;
+            border: 1px solid #eee;
+        }
+
+        button:hover {
+            background: #F44336;
+            border: 1px solid #eee;
+            color: #fff;
+        }
+
+        ul {
+
+            position: relative;
+        }
+
+        ul li {
+            vertical-align: bottom;
+            background: #F44336;
+            margin-left: 2px;
+            list-style: none;
+            display: inline-block;
+            position: relative;
+            bottom: 0;
+            font-size: 20px;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+<textarea id="txt"></textarea>
+<button id="leftin">左侧入</button>
+<button id="rightin">右侧入</button>
+<button id="leftout">左侧出</button>
+<button id="rightout">右侧出</button>
+<input id="search-key" placeholder="搜索词">
+<button id="searchbtn">搜索</button>
+<ul id="list"></ul>
+<script>
+    var keyword = document.getElementById("search-key");
+    var search = document.getElementById("searchbtn");
+    var ul = document.getElementById("list");
+    var num = document.getElementById("txt");
+    var leftIn = document.getElementById("leftin");
+    var rightIn = document.getElementById("rightin");
+    var leftOut = document.getElementById("leftout");
+    var rightOut = document.getElementById("rightout");
+    var myArray = [];
+
+
+    function leftadd() {
+        if (!num.value.trim()) {
+            num.focus();
+            num.value = "";
+        }
+        else {
+            var li = document.createElement("li");
+            li.innerHTML = num.value;
+            ul.insertBefore(li, ul.children[0]);
+            myArray.unshift(num.value.trim());
+            console.log(myArray);
+            num.value = "";
+        }
+    }
+    function rightadd() {
+        if (!num.value.trim()) {
+            num.focus();
+            num.value = "";
+        }
+        else {
+            var li = document.createElement("li");
+            li.innerHTML = num.value;
+            ul.appendChild(li);
+            myArray.push(num.value);
+            console.log(myArray);
+            num.value = "";
+
+        }
+    }
+    function leftdel() {
+        if (ul.childElementCount === 0) {
+            alert("删除的节点不存在");
+        }
+        else {
+            alert("删除:" + ul.firstChild.innerHTML + "！");
+//            console.log(ul.firstChild.innerHTML);
+            ul.removeChild(ul.firstChild);
+            myArray.shift();
+            console.log(myArray);
+        }
+
+    }
+    function rightdel() {
+        if (ul.childElementCount === 0) {
+            alert("删除的节点不存在");
+        }
+        else {
+            alert("删除:" + ul.lastChild.innerHTML + "！");
+            ul.removeChild(ul.lastChild);
+            myArray.pop();
+            console.log(myArray);
+        }
+    }
+    function searchElement() {
+        for (var i = 0; i < myArray.length; i++) {
+//            ul.children[i].style.background = "#f44336";
+            ul.children[i].style.cssText="";
+            if (myArray[i].indexOf(keyword.value) > -1) {
+                ul.children[i].style.background = "blue";
+            }
+        }
+    }
+
+    leftIn.onclick = leftadd;
+    rightIn.onclick = rightadd;
+    leftOut.onclick = leftdel;
+    rightOut.onclick = rightdel;
+    search.onclick = searchElement;
+</script>
+</body>
+</html>

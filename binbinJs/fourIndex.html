@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        input[type="text"] {
+            margin-left: 10px;
+        }
+
+        button {
+            cursor: pointer;
+            border: 1px solid #eee;
+        }
+
+        button:hover {
+            background: #F44336;
+            border: 1px solid #eee;
+            color: #fff;
+        }
+
+        ul {
+
+            position: relative;
+        }
+
+        ul li {
+            vertical-align: bottom;
+            /*position: absolute;*/
+            /*bottom: 0;*/
+            background: #F44336;
+            margin-left: 2px;
+            list-style: none;
+            width: 20px;
+            display: inline-block;
+            position: relative;
+            bottom: 0;
+            font-size: 10px;
+        }
+
+        ul li:hover {
+            background: #ddd;
+        }
+    </style>
+</head>
+<body>
+<input id="txt" type="text" title="">
+<button id="leftin">左侧入</button>
+<button id="rightin">右侧入</button>
+<button id="leftout">左侧出</button>
+<button id="rightout">右侧出</button>
+<button id="sort-btn">排序</button>
+<ul id="list"></ul>
+<script>
+    var sortbtn = document.getElementById("sort-btn");
+    var ul = document.getElementById("list");
+    var num = document.getElementById("txt");
+    var leftIn = document.getElementById("leftin");
+    var rightIn = document.getElementById("rightin");
+    var leftOut = document.getElementById("leftout");
+    var rightOut = document.getElementById("rightout");
+    var sortli = [];
+
+    function leftadd() {
+//        console.log(ul.childElementCount);
+        if (ul.childElementCount < 60) {
+            if (!num.value || isNaN(num.value) || num.value > 100 || num.value < 10) {
+                alert("请输入10~100的数");
+                num.focus();
+                num.value = "";
+            }
+            else {
+                var li = document.createElement("li");
+                li.innerHTML = num.value;
+                ul.insertBefore(li, ul.children[0]);
+                li.style.height = (num.value * 2) + "px";
+//                console.log(li.style.height);
+            }
+        }
+        else {
+            alert("超过最大输入次数60");
+        }
+    }
+    function rightadd() {
+//        console.log(ul.childElementCount)
+        if (ul.childElementCount < 60) {
+            if (!num.value || isNaN(num.value) || num.value > 100 || num.value < 10) {
+                alert("请输入10~100的数");
+                num.focus();
+                num.value = "";
+            }
+            else {
+                var li = document.createElement("li");
+                li.innerHTML = num.value;
+                ul.appendChild(li);
+                li.style.height = (num.value * 2) + "px";
+
+            }
+        }
+        else {
+            alert("超过最大输入次数60");
+        }
+    }
+    function leftdel() {
+        if (ul.childElementCount === 0) {
+            alert("删除的节点不存在");
+        }
+        else {
+            alert("删除数字:" + ul.firstChild.innerHTML + "！");
+//            console.log(ul.firstChild.innerHTML);
+            ul.removeChild(ul.firstChild);
+        }
+
+    }
+    function rightdel() {
+        if (ul.childElementCount === 0) {
+            alert("删除的节点不存在");
+        }
+        else {
+            alert("删除数字:" + ul.lastChild.innerHTML + "！");
+            ul.removeChild(ul.lastChild);
+        }
+    }
+    function getsortli() {
+//        console.log(ul.childElementCount);
+        var count = ul.childElementCount;
+        for (var i = 0; i < count; i++) {
+            var liHeight = parseInt(ul.children[i].style.height);
+//            console.log(liHeight);
+            sortli.push(liHeight);
+        }
+        function sortNum(a, b) {
+            return a - b;
+        }
+
+        sortli.sort(sortNum);
+//        console.log(sortli);
+    }
+    function deladd() {
+        sortli = [];
+        getsortli();
+        var count = ul.childElementCount;
+        while (ul.children.length > 0) {
+            ul.removeChild(ul.lastElementChild)
+        }
+        for (var k = 0; k < count; k++) {
+            var newli = document.createElement("li");
+            newli.style.height = sortli[k] + "px";
+            newli.innerHTML = sortli[k] / 2;
+            ul.appendChild(newli);
+        }
+    }
+
+    leftIn.onclick = leftadd;
+    rightIn.onclick = rightadd;
+    leftOut.onclick = leftdel;
+    rightOut.onclick = rightdel;
+    sortbtn.onclick = deladd;
+</script>
+</body>
+</html>

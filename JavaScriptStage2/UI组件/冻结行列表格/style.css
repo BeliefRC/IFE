@@ -1,0 +1,34 @@
+*{
+  margin:0px;
+  padding:0px;
+}
+body{
+  padding:20px;
+}
+.table-tool {
+      border-collapse: collapse;
+      border:1px solid #eee;
+      font: 14px/1.5 '\5fae\8f6f\96c5\9ed1', Arial,     Tahoma, sans-serif;
+}
+.table-tool th{
+  background: #555;
+  color:#fff;
+  position:relative;
+  border:1px solid #555;
+}
+.table-tool th>span{
+  display: inline-block;
+  width:9px;
+  height:15px;
+  background-image: url('arrow.png');
+  position: absolute;
+  right: 10px;
+  top:5px;
+  cursor: pointer;
+}
+.table-tool th,.table-tool td{
+  width:130px;
+  height:25px;
+  text-align: center;
+  line-height: 25px;
+}

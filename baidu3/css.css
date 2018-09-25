@@ -1,0 +1,52 @@
+#one{
+
+    border: 1px solid #999;
+    background: #eee;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 20px;
+}
+#team img{
+    width: 80px;
+    height: 80px;
+    margin-left: 10px;
+
+}
+#team{
+    width: 200px;
+    padding: 20px;
+    border: 1px solid #999;
+    background: white;
+    float: left;
+}
+#team p{
+    float: right;
+}
+#introduction {
+    border: 1px solid #999;
+    margin-left: 260px;
+    margin-right: 140px;
+    background:white;
+
+}
+ #introduction p{
+    margin: 2px;
+}
+ #picture{
+
+     border: 1px solid #999;
+     width: 120px;
+     float: right;
+     background: white;
+
+ }
+ #picture img{
+     width: 80px;
+     height: 80px;
+     margin: 20px;
+     display:block;
+ }
+ .clear{
+     clear: both;
+ }

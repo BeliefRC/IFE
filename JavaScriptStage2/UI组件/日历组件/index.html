@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>百度学院任务3.40</title>
+    <style>
+        #calendarPanel {
+            border: 1px solid #ddd;
+            width: 280px;
+        }
+
+        #calendar header {
+            display: flex;
+            justify-content: space-between;
+            height: 30px;
+            line-height: 10px;
+            text-align: center;
+            font-size: 12px;
+            color: white;
+            background-color: darkorange;
+        }
+
+        #calendar span {
+            margin-left: 10px;
+        }
+
+        #lastMonth, #nextMonth {
+            position: relative;
+            margin: 12px 10px;
+            height: 0;
+            padding: 0;
+            border-style: solid;
+            border-color: transparent white transparent transparent;
+            border-width: 8px;
+            background-color: transparent;
+            cursor: pointer;
+        }
+
+        #nextMonth {
+            border-color: transparent transparent transparent white;
+        }
+
+        #calendar p {
+            padding: 5px;
+        }
+
+        #calendar div {
+            height: 30px;
+            width: 39px;
+            line-height: 30px;
+            text-align: center;
+            border-right: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+        }
+
+        #calendar div:hover {
+            background-color: #ffe2b2;
+        }
+
+        .otherMonth {
+            color: #ddd;
+        }
+
+        .pickDay {
+            background-color: #ffe2b2;
+        }
+
+        .illegalDay {
+            background-color: #eee;
+            color: black;
+        }
+
+        #calendar > p {
+            font-size: 14px;
+            color: #bbb;
+        }
+    </style>
+</head>
+
+<body>
+<article id="calendar"></article>
+<script src="task.js"></script>
+</body>
+
+</html>
+

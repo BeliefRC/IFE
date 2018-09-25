@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>task37</title>
+    <style>
+        #win {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            width: 400px;
+            height: 200px;
+            margin-left: -200px;
+            margin-top: -100px;
+            border: 3px solid red;
+        }
+        #win h2 {
+            margin-top: 0;
+            background: green;
+            padding: 10px 0;
+            cursor: move;
+        }
+        #win span {
+            margin-left: 200px;
+            cursor: pointer;
+        }
+        #content div{
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+        }
+        #content button {
+            background: green;
+            padding: 10px 15px;
+            color: white;
+            cursor: pointer;
+        }
+        #mask {
+            display: none;
+            position: fixed;
+            height: 100%;
+            width: 100%;
+            background: green;
+            opacity: 0.3;
+        }
+        body {
+            height: 1200px;
+        }
+    </style>
+</head>
+<body>
+<!-- mask要在最前面，否则win里的按钮无法选择 -->
+<div id="mask"></div>
+<div id="win">
+    <h2>这是一个弹出层<span>×</span></h2>
+    <div id="content">
+        <p>这是一个弹出层</p>
+        <div>
+            <button>确认</button>
+            <button>取消</button>
+        </div>
+    </div>
+</div>
+
+<button>click me</button>
+
+<script src="task37.js"></script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #pop {
+            width: 200px;
+            height: 40px;
+            position: absolute;
+        }
+
+        #mask {
+            display: none;
+            position: fixed;
+            background-color: red;
+            opacity: 0.2;
+            width: 100%;
+            height: 100%;
+        }
+
+        #move {
+            display: none;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 400px;
+            height: 300px;
+            background-color: seagreen;
+        }
+
+        #moveTop {
+            background-color: skyblue;
+            height: 50px;
+            line-height: 50px;
+            position: relative;
+            cursor: move;
+        }
+
+        #moveTop span {
+            position: absolute;
+            right: 10px;
+            cursor: pointer;
+        }
+
+        #sure, #cancel {
+            margin-top: 220px;
+            height: 25px;
+            width: 60px;
+        }
+
+        #sure {
+            margin-left: 240px;
+        }
+
+        #cancel {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+<button id="pop">点我</button>
+<div id="mask"></div>
+<div id="move">
+    <h2 id="moveTop">这是一个弹出层<span>×</span></h2>
+    <button id="sure">确定</button>
+    <button id="cancel">取消</button>
+</div>
+
+<script>
+    window.onload = function () {
+        function $(id) {
+            return document.getElementById(id);
+        }
+
+        var pop = $("pop");
+        var mask = $("mask");
+        var move = $("move");
+        var moveTop = $("moveTop");
+        var span = document.getElementsByTagName("span")[0];
+        var sure = $("sure");
+        var cancel = $("cancel");
+        pop.addEventListener("click", function () {
+            mask.style.display = "block";
+            move.style.display = "block";
+
+        });
+        function close() {
+            mask.style.display = "none";
+            move.style.display = "none";
+
+        }
+
+        mask.addEventListener('click', close);
+        cancel.addEventListener('click', close);
+        span.addEventListener('click', close);
+        sure.addEventListener('click', function () {
+            alert("弹出层");
+            close();
+        });
+        function moveDiv(event) {
+            event = event || window.event;
+            var x = event.clientX - move.offsetLeft;
+            var y = event.clientY - move.offsetTop;
+            document.onmousemove = function (event) {
+                event = event || window.event;
+                move.style.left = event.clientX - x + "px";
+                move.style.top = event.clientY - y + "px";
+            };
+            document.onmouseup = function () {
+                document.onmousemove = null;
+                document.onmousedown = null;
+
+            }
+        }
+
+        moveTop.addEventListener('mousedown', moveDiv);
+//        moveTop.onmousedown = moveDiv;
+    }
+</script>
+</body>
+</html>

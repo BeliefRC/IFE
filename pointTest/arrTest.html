@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<!--suppress ALL -->
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb18030">
+    <title>Untitled Document</title>
+    <script src="arr.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+    /*
+     * param1 Array
+     * param2 Array
+     * return true or false
+     */
+    function arraysSimilar(arr1, arr2){
+        if(arr1.length!=arr2.length){return false}//首先判断长度是否一致，不一致直接返回false
+        else {
+            var arr1Type=[];//用数组记录下来arr1里面各个元素的类型
+            for(var item of arr1){
+                arr1Type.push(Object.prototype.toString.apply(item));//用Object.prototype.toString.apply(item)方法,接免去了typeof和instanceOf判断的麻烦
+            }
+            for(var item of arr2){
+                if(arr1Type.indexOf(Object.prototype.toString.apply(item))==-1){return false}//遍历arr2元素类型是否和arr1元素类型一样，有不一样的直接返回fasle
+            }
+            return true;//能经过上面判断就返回true
+        }
+    }
+</script>
+<script src="testData.js"></script>
+</body>
+</html>

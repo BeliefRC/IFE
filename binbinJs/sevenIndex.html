@@ -1,0 +1,155 @@
+<!DOCTYPE>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>task7</title>
+    <style>#wrapper {
+        display: flex;
+        flex-direction: row;
+        padding: 15px 10px;
+        margin: 5px;
+        border: 1px solid #000;
+        background-color: #fff;
+        width: 730px;
+        height: 240px;
+    }
+
+    .layer_1 {
+        display: flex;
+        flex-direction: row;
+        padding: 15px 10px;
+        margin: 5px;
+        border: 1px solid #000;
+        background-color: #fff;
+        width: 340px;
+        height: 200px;
+    }
+
+    .layer_2 {
+        display: flex;
+        flex-direction: row;
+        padding: 15px 10px;
+        margin: 5px;
+        border: 1px solid #000;
+        background-color: #fff;
+        width: 135px;
+        height: 160px;
+    }
+
+    .layer_3 {
+        display: flex;
+        flex-direction: row;
+        padding: 15px 10px;
+        margin: 5px;
+        border: 1px solid #000;
+        background-color: #fff;
+        width: 52.5px;
+        height: 120px;
+    }</style>
+</head>
+
+<body>
+<div id="wrapper">
+    <div class="layer_1">
+        <div class="layer_2">
+            <div class="layer_3"></div>
+            <div class="layer_3"></div>
+        </div>
+        <div class="layer_2">
+            <div class="layer_3"></div>
+            <div class="layer_3"></div>
+        </div>
+    </div>
+    <div class="layer_1">
+        <div class="layer_2">
+            <div class="layer_3"></div>
+            <div class="layer_3"></div>
+        </div>
+        <div class="layer_2">
+            <div class="layer_3"></div>
+            <div class="layer_3"></div>
+        </div>
+    </div>
+</div>
+
+<div id="control-box">
+    <input type="button" id="preorder" value="前序遍历">
+    <input type="button" id="inorder" value="中序遍历">
+    <input type="button" id="postorder" value="后序遍历">
+</div>
+
+<script>
+    var inAnimation = false;
+    var arr = [];
+    var rootnode = document.getElementById("wrapper");
+    var preorderbtn = document.getElementById("preorder");
+    var inorderbtn = document.getElementById("inorder");
+    var postorderbtn = document.getElementById("postorder");
+    //前序
+    function preorder(root) {
+        if (!root) return;
+        arr.push(root);
+        preorder(root.firstElementChild);
+        preorder(root.lastElementChild);
+    }
+    //中序
+    function inorder(root) {
+        if (!root) return;
+        inorder(root.firstElementChild);
+        arr.push(root);
+        inorder(root.lastElementChild);
+    }
+    //后序
+    function postorder(root) {
+        if (!root) return;
+        postorder(root.firstElementChild);
+        postorder(root.lastElementChild);
+        arr.push(root);
+    }
+    function render() {
+        preorderbtn.disabled = true;
+        inorderbtn.disabled = true;
+        postorderbtn.disabled = true;
+        var i = 0;
+        arr[i].style.background = "#666";
+        var start = setInterval(function () {
+            i++;
+            if (i >= arr.length) {
+                inAnimation = false;
+                preorderbtn.disabled = false;
+                inorderbtn.disabled = false;
+                postorderbtn.disabled = false;
+                clearInterval(start);
+            }
+            arr[i - 1].style.background = "#fff";
+            arr[i].style.background = "#666";
+        }, 500);
+        arr[(arr.length - 1)].style.background = "#fff";
+    }
+    preorderbtn.addEventListener(
+        'click', function () {
+            arr = [];
+            preorder(rootnode);
+            render()
+
+        }
+    );
+    inorderbtn.addEventListener(
+        'click', function () {
+            arr = [];
+            inorder(rootnode);
+            render()
+        }
+    );
+    postorderbtn.addEventListener(
+        'click', function () {
+            arr = [];
+            postorder(rootnode);
+            render()
+        }
+    );
+</script>
+</body>
+
+</html>

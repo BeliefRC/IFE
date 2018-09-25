@@ -1,0 +1,563 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+.container{
+    width: 1280px;
+    height: 4552px;
+    margin: 0 auto;
+}
+header{
+    width: 1280px;
+    height: 57px;
+    position: relative;
+}
+.smallbook{
+    float: left;
+    left: 59px;
+    top: 13px;
+    position:absolute;
+
+}
+header h1{
+    float: left;
+    display: block;
+    left: 100px;
+    position: absolute;
+    font-size: 21px;
+    line-height: 57px;
+    font-family:SimHei ;
+}
+header ul{
+    float: right;
+    position: absolute;
+    right: 145px;
+}
+header li{
+    list-style-type:none;
+    float: right;
+    margin-left: 60px;
+    line-height: 57px;
+    font-size: 14px;
+    color: grey;
+    font-family:SimHei ;
+    font-weight: inherit;
+
+}
+
+.smallpeople{
+    float: right;
+    position: absolute;
+    right: 101px;
+    top: 16px;
+}
+header p{
+    font-size: 14px;
+    color:#ea6f6e;
+    float: right;
+    position: absolute;
+    right: 68px;
+    line-height: 57px;
+    font-family:SimHei ;
+    font-weight: inherit;
+}
+.underline{
+    height: 4px;
+    width: 52px;
+    background-color: aqua;
+    border-width: 4px;
+    border-color: #be4f48;
+    z-index: 2;
+}
+/*以上为header部分*/
+.one{
+    width: 1280px;
+    height: 854px;
+    background: url("图一.png");
+    position: relative;
+}
+.one h1{
+    font-family:Microsoft YaHei;
+    font-size: 60px;
+    color: white;
+    top: 230px;
+    left: 116px;
+    position: absolute;
+}
+.one p{
+    font-family:Microsoft YaHei;
+    font-size: 21px;
+    color: white;
+    position: absolute;
+    top: 310px;
+    left: 124px;
+}
+.starexpenience{
+    width: 331px;
+    height: 65px;
+    background-color: #e74f4d;
+    top: 429px;
+    left: 126px;
+    position:absolute;
+}
+.starexpenience p{
+    color: white;
+    line-height: 65px;
+    font-family:Microsoft YaHei;
+    font-size: 30px;
+    margin: 0 auto;
+    position: absolute;
+    top:0px;
+    left: 105px;
+}
+/*two*/
+.two{
+    width: 1280px;
+    height: 250px;
+    background-color:white;
+    position:relative;
+    top:-160px;
+}
+.round,.flag,.flower,.fourblock{
+    height: 250px;
+    width: 25%;
+    float: left;
+    position: relative;
+}
+.two img{
+    top: 45px;
+    left: 145px;
+    position: absolute;
+}
+.two p{
+    text-align: center;
+    margin-top: 133px;
+    font-weight: bold;
+    color:#989999;
+}
+.upright{
+    width: 2px;
+    height: 60px;
+    background-color: #989999;
+    float:right;
+    position:relative;
+    top:-40px;
+}
+.three{
+    width: 1280px;
+    height: 360px;
+    background-color: #ededec;
+    position:relative;
+    top: -160px;
+}
+.three img{
+    margin-top: 89px;
+    margin-left: 595px;
+}
+.three p{
+    color: #989999;
+    font-size: 53.59px;
+    font-family:SimHei ;
+    position: absolute;
+    bottom: 79px;
+    right: 212px;
+}
+.four{
+    width: 1280px;
+    height: 340px;
+    position: relative;
+    top: -160px;
+    background: url("看地图.png");
+}
+.fourone{
+    font-size: 21px;
+    font-family:SimHei ;
+    color:white;
+    position: absolute;
+    top: 53px;
+    left: 501px;
+    font-weight: inherit;
+}
+.fourtwo{
+    font-size: 12px;
+    font-family:SimHei ;
+    color:white;
+    position: absolute;
+    top: 106px;
+    left: 449px;
+    font-weight: inherit;
+}
+.shortline{
+    width: 30px;
+    height: 2px;
+    color:#e5dfdc;
+    position: absolute;
+    top: 84px;
+    left: 601px;
+}
+.country,.province,.city,button{
+    width: 236px;
+    height: 36px;
+}
+.country{
+    position: absolute;
+    top: 171px;
+    left: 126px;
+}
+.province{
+    position: absolute;
+    top: 171px;
+    left: 390px;
+}.city{
+     position: absolute;
+     top: 171px;
+     left: 655px;
+ }
+button{
+    position: absolute;
+    top: 171px;
+    left: 920px;
+    background-color: #be4f48;
+
+}
+button span{
+    color: white;
+    font-size: 14px;
+    font-family:SimHei ;
+}
+.five{
+    width: 1280px;
+    height: 605px;
+    background-color: #f8f8f8;
+    position: relative;
+    top: -160px;
+}
+.picture3-6{
+    position: absolute;
+    top:112px;
+    left: 156px;
+}
+.beijinactivity{
+    position: absolute;
+    top: 104px;
+    left: 221px;
+}
+.six{
+    width: 1280px;
+    height: 566px;
+    position: relative;
+    top: -160px;
+}
+.picture7{
+    position: absolute;
+    top: -1306px;
+    z-index:-1;
+}
+.newworld{
+    position: absolute;
+    top: 165px;
+    right: 165px;
+}
+.six>p:nth-child(1){
+    font-size: 49.47px;
+    font-family:Microsoft YaHei;
+    color: white;
+    bottom: 455px;
+    left: 352px;
+    position: absolute;
+}
+.six>p:nth-child(2){
+    font-size:187.19px;
+    font-family:Microsoft YaHei;
+    color: white;
+    bottom: 257px;
+    left: 237px;
+    position: absolute;
+}
+.six>p:nth-child(3){
+    font-size: 31.91px;
+    font-family:Microsoft YaHei;
+    color: white;
+    left: 349px;
+    bottom: 157px;
+    position: absolute;
+}
+.six>p:nth-child(4){
+     font-size: 12px;
+     font-family:SimSun;
+     line-height: 30px;
+     color: #aaaaaa;
+     right: 71px;
+     top: 216px;
+     position: absolute;
+ }
+.six>p:nth-child(5){
+    font-size: 12px;
+    font-family:Microsoft YaHei;
+    color:#e25c60;
+    right: 191px;
+    top: 378px;
+    position: absolute;
+    font-weight: bold;
+}
+.redblock{
+    border: 1px solid #e4666a;
+    height: 34px;
+    width: 106px;
+    position: absolute;
+    top: 367px;
+    right: 160px;
+}
+.round1{
+    width: 8px;
+    height: 8px;
+    border: 1px solid grey;
+    background: grey;
+    border-radius: 4px;
+    position: absolute;
+    top: 426px;
+    right: 234px;
+}
+.round2{
+    width: 8px;
+    height: 8px;
+    border: 1px solid grey;
+    border-radius: 4px;
+    position: absolute;
+    top: 426px;
+    right: 208px;
+}
+.round3{
+    width: 8px;
+    height: 8px;
+    border: 1px solid grey;
+    border-radius: 4px;
+    position: absolute;
+    top: 426px;
+    right: 184px;
+}
+.triangle{
+    width: 0;
+    height: 0;
+    border-top: 16px solid transparent;
+    border-right: 32px solid white;
+    border-bottom: 16px solid transparent;
+    position: absolute;
+    top: 267px;
+    right: 429px;
+}
+.seven{
+    width: 1280px;
+    height: 521px;
+    position: relative;
+    top: -160px;
+}
+.sevenred{
+    width: 426px;
+    height: 521px;
+    background-color: #e74f4d;
+    float: left;
+}
+.seven img{
+    float: right;
+}
+.eight {
+    width: 1280px;
+    height: 750px;
+    position: relative;
+    top: -160px;
+}
+.eight h1{
+    font-size: 21px;
+    font-family: SimHei;
+    position: absolute;
+    top: 117px;
+    left: 556px;
+}
+.eight .topone{
+    font-size: 12px;
+    font-family:Microsoft YaHei;
+    line-height: 18px;
+    position: absolute;
+    left: 430px;
+    bottom: 550px;
+}
+.eight h2{
+    font-size: 14px;
+    font-family: SimHei;
+    color: #231815;
+}
+.tittleone{
+   position: absolute;
+    bottom: 431px;
+    left: 138px;
+}
+.tittletwo{
+    position: absolute;
+    bottom: 301px;
+    left: 138px;
+}
+.tittlethree{
+    position: absolute;
+    bottom: 192px;
+    left: 138px;
+}
+.rightone{
+    font-size: 12px;
+    font-family: SimSun;
+    line-height: 21px;
+    color: #231815;
+    position: absolute;
+    bottom: 370px;
+    left: 138px;
+}
+.righttwo {
+    font-size: 12px;
+    font-family: SimSun;
+    line-height: 21px;
+    color: #231815;
+    position: absolute;
+    bottom: 241px;
+    left: 138px;
+}
+.eight form>input:nth-child(1){
+    background-color: #ededee;
+    width: 310px;
+    height: 40px;
+    font-size: 12px;
+    color: #6c6868;
+    font-family: SimSun;
+    position: absolute;
+    left: 500px;
+    bottom: 405px;
+}
+.eight form>input:nth-child(2){
+    background-color: #ededee;
+    width: 310px;
+    height: 40px;
+    font-size: 12px;
+    color: #6c6868;
+    font-family: SimSun;
+    position: absolute;
+    left: 829px;
+    bottom: 405px;
+}
+.eight form>input:nth-child(3){
+    background-color: #ededee;
+    width: 310px;
+    height: 40px;
+    font-size: 12px;
+    color: #6c6868;
+    font-family: SimSun;
+    position: absolute;
+    left: 500px;
+    bottom: 350px;
+}
+.eight form>input:nth-child(4){
+    background-color: #ededee;
+    width: 310px;
+    height: 40px;
+    font-size: 12px;
+    color: #6c6868;
+    font-family: SimSun;
+    position: absolute;
+    left: 829px;
+    bottom: 350px;
+}
+.eight form>input:nth-child(5){
+    background-color: #ededee;
+    width: 640px;
+    height: 40px;
+    font-size: 14px;
+    color: #6c6868;
+    font-family: SimHei;
+    position: absolute;
+    left: 500px;
+    bottom: 165px;
+}
+.eight textarea{
+    background-color: #ededee;
+    width: 640px;
+    height: 120px;
+    font-size: 12px;
+    color: #6c6868;
+    font-family: SimHei;
+    position: absolute;
+    left: 500px;
+    bottom: 220px;
+}
+.nine{
+     width: 1280px;
+     height: 360px;
+     position: relative;
+     top: -160px;
+    background-color: #32353e;
+ }
+.nine h1{
+    font-size: 21px;
+    font-family: SimHei;
+    line-height: 48.37px;
+    color: #ffffff;
+    position: absolute;
+    top: 90px;
+    left: 599px;
+}
+.nine p{
+    font-size: 12px;
+    font-family: SimSun ;
+    line-height:18px;
+    color: #ffffff;
+    position: absolute;
+    top: 125px;
+    left: 406px;
+    text-align: center;
+}
+.nine form>input:nth-child(1){
+    background-color: #ededee;
+    width: 430px;
+    height: 40px;
+    font-size: 14px;
+    line-height: 27px;
+    color: #aaaaaa;
+    font-family:"Microsoft YaHei";
+    position: absolute;
+    left: 385px;
+    bottom: 137px;
+
+}
+.nine form>input:nth-child(2){
+    background-color:#6f7278;
+    width: 80px;
+    height: 40px;
+    font-size: 15px;
+    line-height: 22.5px;
+    color: #aaaaaa;
+    font-family:"Microsoft YaHei";
+    position: absolute;
+    left: 815px;
+    bottom: 137px;
+}
+ footer{
+     width: 1280px;
+     height: 60px;
+     position: relative;
+     top: -160px;
+     background-color: #303039;
+ }
+footer>p:nth-child(1){
+    font-size:12px;
+    font-family:SimSun;
+    color: white;
+    top: 30px;
+    left: 100px;
+    position: absolute;
+}
+footer>p:nth-child(2){
+    font-size:12px;
+    font-family:SimSun;
+    color: white;
+    top: 32px;
+    left: 1174px;
+    position: absolute;
+}

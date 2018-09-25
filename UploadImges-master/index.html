@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title></title>
+    <link href="css/base.css" rel="stylesheet"/>
+</head>
+
+<body>
+<form id="frmx" enctype="multipart/form-data">
+    <div class="picbox clearfix">
+        <p class="txt">选择证明材料</p>
+        <a class="addphoto">
+            <input type="file" id="imgUpload" name="file1" draggable="false" single accept="image/*">
+        </a>
+        <!--允许file控件接受的文件类型  single  multiple-->
+        <div id="destination"></div>
+    </div>
+</form>
+<script src="js/jquery-1.10.1.min.js"></script>
+<script src="js/base.js"></script>
+<script>
+    $(function () {
+        previewImage()
+    });
+
+</script>
+</body>
+
+</html>
